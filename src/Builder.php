@@ -148,7 +148,7 @@ class Builder
     private function convertToDate($value)
     {
         if (! $value instanceof DateTimeImmutable) {
-            trigger_error('Using integers for registered date claims is deprecated, please use DateTimeImmutable objects instead.', E_USER_DEPRECATED);
+            // trigger_error('Using integers for registered date claims is deprecated, please use DateTimeImmutable objects instead.', E_USER_DEPRECATED);
 
             return new DateTimeImmutable('@' . $value);
         }
@@ -503,7 +503,7 @@ class Builder
     public function getToken(Signer $signer = null, Key $key = null)
     {
         if ($signer === null || $key === null) {
-            trigger_error('Not specifying the signer and key to Builder#getToken() is deprecated. Please move the arguments from Builder#sign() to Builder#getToken().', E_USER_DEPRECATED);
+            // trigger_error('Not specifying the signer and key to Builder#getToken() is deprecated. Please move the arguments from Builder#sign() to Builder#getToken().', E_USER_DEPRECATED);
         }
 
         $signer = $signer ?: $this->signer;
